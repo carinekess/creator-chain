@@ -1,0 +1,47 @@
+{
+  "name": "creatori-chaini",
+  "private": true,
+  "workspaces": [
+    "src/creatori-chaini-frontend"
+  ],
+  "canisters": {
+    "creatori-chaini-frontend": {
+      "frontend": {
+        "entrypoint": "src/creatori-chaini-frontend/index.html"
+      },
+      "source": ["src/creatori-chaini-frontend"],
+      "build": "npm run build --workspace=creatori-chaini-frontend",
+      "dependencies": [],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "creatori-chaini-backend": {
+      "type": "motoko",
+      "source": ["src/creatori-chaini-backend"],
+      "candid": "src/creatori-chaini-backend/creatori-chaini-backend.did",
+      "wasm": "src/creatori-chaini-backend/.dfx/local/canisters/creatori-chaini-backend/creatori-chaini-backend.wasm.gz",
+      "dependencies": []
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "optimize": true
+    },
+    "deploy": {
+      "confirm": true
+    }
+  },
+  "version": 1
+}
