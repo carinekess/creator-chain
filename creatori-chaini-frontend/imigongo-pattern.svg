@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="imigongo" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <!-- Geometric Imigongo-inspired patterns -->
+            <path d="M0 0h50l50 50h-50z" fill="#000"/>
+            <path d="M50 0l50 50v50l-50-50z" fill="#000"/>
+            <path d="M0 50l50 50v-50z" fill="#000"/>
+            <path d="M50 50v50h50l-50-50z" fill="#000"/>
+        </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#imigongo)"/>
+</svg>
