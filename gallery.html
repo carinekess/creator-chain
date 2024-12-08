@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artista - Gallery</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Artista</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="gallery-container">
+        <div class="filters">
+            <div class="search-bar">
+                <input type="text" id="searchArt" placeholder="Search artworks...">
+            </div>
+            <div class="filter-options">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="painting">Paintings</option>
+                    <option value="sculpture">Sculptures</option>
+                    <option value="digital">Digital Art</option>
+                    <option value="photography">Photography</option>
+                    <option value="photography">Others...</option>
+                </select>
+                <select id="priceFilter">
+                    <option value="">Price Range</option>
+                    <option value="0-50000">Under 50,000 RWF</option>
+                    <option value="50000-100000">50,000 - 100,000 RWF</option>
+                    <option value="100000-500000">100,000 - 500,000 RWF</option>
+                    <option value="500000+">Above 500,000 RWF</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="artworkGrid">
+            <!-- Artwork cards will be dynamically loaded here -->
+        </div>
+
+        <!-- Artwork Modal -->
+        <div id="artworkModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="artwork-details">
+                    <div class="artwork-image">
+                        <img id="modalImage" src="" alt="">
+                    </div>
+                    <div class="artwork-info">
+                        <h2 id="modalTitle"></h2>
+                        <p id="modalArtist"></p>
+                        <p id="modalDescription"></p>
+                        <p class="price" id="modalPrice"></p>
+                        <div class="purchase-options">
+                            <button class="purchase-btn" onclick="initiatePayment()">Purchase Now</button>
+                            <div class="payment-methods">
+                                <img src="images/mtn-money.png" alt="MTN Mobile Money">
+                                <img src="images/airtel-money.png" alt="Airtel Money">
+                                <img src="images/paypal.png" alt="PayPal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>
